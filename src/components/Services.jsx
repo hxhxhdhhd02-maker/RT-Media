@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaVideo, FaPenFancy, FaCamera, FaPaintBrush, FaMobileAlt, FaChartLine } from 'react-icons/fa';
+import { FaVideo, FaPenFancy, FaCamera, FaPaintBrush, FaMobileAlt, FaChartLine, FaCode, FaGraduationCap } from 'react-icons/fa';
 import './Services.css';
 
 const servicesData = [
@@ -10,6 +10,8 @@ const servicesData = [
     { icon: <FaPaintBrush />, title: "تصميم جرافيك", desc: "تصميمات سوشيال ميديا وإعلانات بصريّة قوية" },
     { icon: <FaMobileAlt />, title: "إدارة سوشيال ميديا", desc: "إدارة صفحات السوشيال ميديا بشكل يومي ومنظم" },
     { icon: <FaChartLine />, title: "إعلانات ممولة", desc: "إطلاق وتنظيم حملات إعلانات ممولة لتحقيق نتائج فعلية" },
+    { icon: <FaCode />, title: "تصميم المواقع", desc: "تصميم وبرمجة مواقع احترافية متجاوبة مع جميع الأجهزة" },
+    { icon: <FaGraduationCap />, title: "منصات تعليمية", desc: "تطوير منصات تعليمية تفاعلية لإدارة الدورات والطلاب" },
 ];
 
 const container = {
