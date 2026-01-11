@@ -1,0 +1,90 @@
+.clients-section {
+    padding: 100px 0;
+    position: relative;
+    width: 100%;
+    /* Gradient Separator background */
+    background: linear-gradient(to bottom, transparent, rgba(5,5,5,0.8), transparent);
+}
+
+.clients-section h2 {
+    text-align: center;
+    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    margin-bottom: 50px;
+    color: var(--primary);
+    font-weight: 800;
+    text-shadow: 0 0 30px rgba(0, 224, 255, 0.3);
+}
+
+/* Track Container */
+.clients-track {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap; 
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Premium Pill Design */
+.client-pill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px 40px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 60px;
+    backdrop-filter: blur(15px);
+    transition: all 0.3s ease;
+    cursor: default;
+    min-width: 220px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.client-pill:hover {
+    background: rgba(0, 224, 255, 0.15);
+    border-color: rgba(0, 224, 255, 0.4);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 224, 255, 0.2);
+}
+
+.client-icon {
+    font-size: 1.6rem;
+    color: var(--primary);
+    flex-shrink: 0;
+}
+
+.client-label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ddd;
+    margin: 0;
+    letter-spacing: 0.5px;
+}
+
+.client-pill:hover .client-label { color: #fff; }
+
+/* STRICT Mobile Fixes */
+@media (max-width: 768px) {
+    .clients-section { padding: 60px 0; }
+    
+    .clients-track {
+        flex-direction: column; /* Stack vertically for strict alignment */
+        align-items: stretch; /* Full width items */
+        gap: 15px;
+        padding: 0 20px;
+    }
+
+    .client-pill {
+        width: 100%;
+        max-width: 100%;
+        justify-content: center;
+        padding: 18px 20px;
+        margin: 0;
+        border-radius: 15px; /* Slightly less round on mobile to look more like 'blocks' */
+    }
+}

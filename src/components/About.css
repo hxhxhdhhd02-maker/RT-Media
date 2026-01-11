@@ -1,0 +1,136 @@
+.about-section {
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.about-bg-shape {
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(112,0,255,0.15) 0%, transparent 70%);
+    z-index: 0;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.about-card {
+    background: rgba(20, 20, 20, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 40px;
+    padding: 60px 50px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    overflow: hidden;
+    max-width: 1000px;
+    margin: 0 auto;
+    z-index: 1;
+}
+
+.glossy-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+.about-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 40px;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+}
+
+.title-underline {
+    position: absolute;
+    bottom: 5px;
+    right: 0;
+    height: 15px;
+    background: var(--primary);
+    opacity: 0.5;
+    z-index: 0;
+    transform: rotate(-2deg);
+    border-radius: 5px;
+}
+
+.about-text {
+    font-size: clamp(1.1rem, 2vw, 1.6rem);
+    line-height: 2;
+    color: #ddd;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+.partner-word {
+    color: #fff;
+    border-bottom: 2px solid var(--primary);
+}
+
+.empire-word {
+    color: var(--primary);
+    font-weight: 900;
+}
+
+.quote-text {
+    margin-top: 30px;
+    font-size: clamp(1rem, 1.5vw, 1.4rem);
+    color: #aaa;
+    font-style: italic;
+}
+
+.floating-badge {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 1.5rem;
+    opacity: 0.5;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .about-section {
+        padding: 60px 15px;
+    }
+
+    .about-card {
+        padding: 40px 25px;
+        border-radius: 25px;
+    }
+
+    .about-title {
+        margin-bottom: 30px;
+    }
+
+    .floating-badge {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        top: 20px;
+        left: 20px;
+    }
+
+    .about-bg-shape {
+        width: 300px;
+        height: 300px;
+    }
+}

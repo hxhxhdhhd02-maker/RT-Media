@@ -1,0 +1,241 @@
+/* --- NEXT-GEN HEADER DESIGN - CENTERED TOP --- */
+
+/* Header Container */
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    animation: slideDown 1s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+    padding: 20px 0;
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* The Glass Command Bar */
+.container {
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* A subtle bottom light beam */
+.container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    opacity: 0.5;
+    box-shadow: 0 0 15px var(--primary);
+}
+
+/* Logo Styles */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    z-index: 1002;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover { transform: scale(1.05); }
+
+.logo h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #fff;
+    margin: 0;
+    letter-spacing: -1px;
+    position: relative;
+}
+
+/* Logo icon/dot */
+.logo h1::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: var(--primary);
+    border-radius: 50%;
+    margin-left: 8px;
+    box-shadow: 0 0 10px var(--primary);
+    animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.logo span { color: var(--primary); }
+
+/* Desktop Navigation */
+.nav-menu { display: flex; align-items: center; gap: 40px; }
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 8px 15px;
+    border-radius: 8px;
+}
+
+/* Hover Effect: Glass Highlight */
+.nav-link:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Active Indicator */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    width: 20px;
+    height: 2px;
+    background: var(--primary);
+    box-shadow: 0 0 8px var(--primary);
+    transition: transform 0.3s ease;
+    border-radius: 2px;
+}
+
+.nav-link:hover::after {
+    transform: translateX(-50%) scaleX(1);
+}
+
+/* CTA Button - "Cyber Button" */
+.nav-cta {
+    position: relative;
+    background: transparent;
+    color: var(--primary);
+    padding: 12px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    border: 1px solid rgba(0, 224, 255, 0.3);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 224, 255, 0.1);
+}
+
+.nav-cta::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 224, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.nav-cta:hover {
+    border-color: var(--primary);
+    box-shadow: 0 0 20px rgba(0, 224, 255, 0.4);
+    color: #fff;
+    background: rgba(0, 224, 255, 0.1);
+}
+
+.nav-cta:hover::before {
+    left: 100%;
+}
+
+/* Mobile Toggle */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 1002;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle:hover { background: rgba(255, 255, 255, 0.1); border-color: var(--primary); }
+.bar { width: 24px; height: 2px; background-color: #fff; border-radius: 2px; transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55); }
+
+/* Animation for Burger */
+.menu-toggle.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); background: var(--primary); }
+.menu-toggle.active .bar:nth-child(2) { opacity: 0; transform: scale(0); }
+.menu-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); background: var(--primary); }
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+    .header { padding: 15px 0; }
+    .container { padding: 10px 20px; border-radius: 15px; margin: 0 15px; }
+    .nav-menu { display: none; }
+    .menu-toggle { display: flex; }
+
+    .nav-menu.active {
+        display: flex;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        width: 100vw; height: 100vh;
+        background: rgba(5, 5, 5, 0.95);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: 1001;
+        gap: 40px;
+    }
+    
+    .nav-link { 
+        font-size: 2.2rem; 
+        font-weight: 800; 
+        color: #fff; 
+        opacity: 0; 
+        transform: translateY(30px); 
+        animation: fadeInUp 0.5s ease forwards; 
+    }
+    
+    .nav-link:nth-child(1) { animation-delay: 0.1s; }
+    .nav-link:nth-child(2) { animation-delay: 0.2s; }
+    .nav-link:nth-child(3) { animation-delay: 0.3s; }
+    .nav-link:nth-child(4) { animation-delay: 0.4s; }
+
+    .nav-cta { 
+        margin-top: 20px; 
+        font-size: 1.4rem; 
+        padding: 18px 50px; 
+        opacity: 0; 
+        animation: fadeInUp 0.5s ease forwards 0.5s; 
+        width: 80%; 
+        text-align: center; 
+    }
+}
+
+@keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+}

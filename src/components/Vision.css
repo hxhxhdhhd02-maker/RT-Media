@@ -1,0 +1,102 @@
+.vision-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(ellipse at center, #111 0%, #000 100%);
+    padding: 100px 20px;
+    width: 100%;
+}
+
+.vision-bg-grid {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), 
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.2;
+    mask-image: radial-gradient(circle, black 40%, transparent 100%);
+    pointer-events: none;
+}
+
+.vision-container {
+    text-align: center;
+    max-width: 900px;
+    z-index: 10;
+    position: relative;
+    padding: 0 20px;
+}
+
+.vision-title {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.vision-subtitle {
+    display: inline-block;
+    color: var(--primary);
+    margin-top: 10px;
+    text-shadow: 0 0 30px rgba(0, 224, 255, 0.3);
+}
+
+.vision-content {
+    position: relative;
+    margin-top: 50px;
+}
+
+.vision-quote-mark {
+    font-size: clamp(5rem, 15vw, 10rem);
+    position: absolute;
+    top: -50px;
+    right: -20px;
+    color: rgba(255,255,255,0.03);
+    font-family: serif;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.vision-text {
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    color: #bbb;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: auto;
+    border-right: 4px solid var(--primary);
+    padding-right: 25px;
+}
+
+.vision-highlight {
+    color: #fff;
+    font-weight: 600;
+}
+
+.vision-brand {
+    color: var(--primary);
+    font-size: 1.1em;
+    font-weight: 900;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .vision-section {
+        min-height: auto;
+        padding: 60px 15px;
+    }
+
+    .vision-text {
+        padding-right: 15px;
+        border-right-width: 3px;
+        text-align: right;
+    }
+
+    .vision-quote-mark {
+        top: -30px;
+        right: 0;
+    }
+}
